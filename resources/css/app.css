@@ -1,0 +1,12 @@
+@import url('../../public/assets/vendor/fonts/tabler-icons.css');
+/* @import url('/assets/vendor/fonts/fontawesome.css'); */
+/* @import url('/assets/vendor/fonts/flag-icons.css'); */
+
+/* Core CSS */
+@import url('../../public/assets/vendor/css/rtl/core.css');
+@import url('../../public/assets/vendor/css/rtl/theme-default.css');
+@import url('../../public/assets/css/demo.css');
+
+/* Vendors CSS */
+@import url('../../public/assets/vendor/libs/node-waves/node-waves.css');
+@import url('../../public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css');

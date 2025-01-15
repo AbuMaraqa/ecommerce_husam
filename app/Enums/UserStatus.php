@@ -18,6 +18,15 @@ enum UserStatus: int
         };
     }
 
+    public function color(): string
+    {
+        return match ($this) {
+            self::ACTIVE => 'success',
+            self::INACTIVE => 'danger',
+            self::SUSPENDED => 'warning',
+        };
+    }
+
     public function badgeClass(): string
     {
         return match ($this) {

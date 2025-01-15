@@ -3,6 +3,13 @@
 * File include item demo only specific css only
 ******************************************************************************/
 
+/* Add By Mohamad Maraqa */
+
+    table , td{
+        text-align: center;
+    }
+
+/*  */
 .light-style .menu .app-brand.demo {
   height: 64px;
 }

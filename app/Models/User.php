@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -27,7 +28,8 @@ class User extends Authenticatable
         'phone',
         'city',
         'address',
-        'status'
+        'status',
+        'current_role_id'
     ];
 
     /**
@@ -66,6 +68,22 @@ class User extends Authenticatable
 
     public function getStatusBadge(): string
     {
-        return $this->status->badgeClass();
+        // Since 'status' is already cast to CategoryStatus, use it directly
+        $status = $this->status;
+
+        // If $status is null, fall back to a default value
+        if (!$status) {
+            $status = UserStatus::INACTIVE; // Default fallback
+        }
+
+        return <<<HTML
+            <span class="badge {$status->badgeClass()}">{$status->label()}</span>
+        HTML;
     }
+
+    public function currentRole()
+    {
+        return $this->belongsTo(Role::class, 'current_role_id');
+    }
+
 }

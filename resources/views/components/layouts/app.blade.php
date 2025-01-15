@@ -71,6 +71,7 @@
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
+
             <!-- Content -->
 
             @include('layouts.content')
@@ -84,6 +85,7 @@
           </div>
           <!-- Content wrapper -->
         </div>
+
         <!-- / Layout page -->
       </div>
 
@@ -93,6 +95,7 @@
       <!-- Drag Target Area To SlideIn Menu On Small Screens -->
       <div class="drag-target"></div>
     </div>
+
         <!-- / Layout wrapper -->
 
     <!-- Core JS -->

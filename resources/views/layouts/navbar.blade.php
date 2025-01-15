@@ -92,10 +92,13 @@
                     </li>
                     <li>
                       <div class="d-grid px-2 pt-2 pb-1">
-                        <a class="btn btn-sm btn-danger d-flex" href="javascript:void(0);">
+                        <a class="btn btn-sm btn-danger d-flex" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                           <small class="align-middle">Logout</small>
                           <i class="ti ti-logout ms-2 ti-14px"></i>
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                       </div>
                     </li>
                   </ul>

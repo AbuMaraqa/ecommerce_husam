@@ -20,6 +20,7 @@ use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\EditUser;
 use App\Livewire\Users\ListUsers;
 use GuzzleHttp\Promise\Create;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,5 +81,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/edit/{id}', EditTag::class)->name('tags.edit');
     });
 });
+
+Route::get('/migrate', function(){
+    Artisan::call('migrate');
+    dd('migrated!');
+});
+
 
 require __DIR__.'/auth.php';

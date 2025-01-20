@@ -29,22 +29,21 @@
                 </div>
                 <div class="col-12 mb-4">
                     <label for="" class="form-label">الرمز</label>
-
+                    <br>
+                    <img src="{{ $this->getCategoryImage('category_image') }}" style="width: 80px" alt="">
                     <div class="input-group">
-                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon03">رفع
-                            الرمز</button>
                         <input type="file" class="form-control" wire:model="icon" id="inputGroupFile03"
                             aria-describedby="inputGroupFileAddon03" aria-label="Upload">
                     </div>
                 </div>
                 <div class="col-12 mb-4">
                     <label for="" class="form-label">الصورة</label>
-
+                    <br>
+                    <img src="{{ $this->getCategoryImage('category_icon') }}" style="width: 80px" alt="">
                     <div class="input-group">
-                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon03">رفع
-                            الصورة</button>
                         <input type="file" class="form-control" wire:model="image" id="inputGroupFile03"
-                            aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+                            aria-describedby=
+                            \"inputGroupFileAddon03" aria-label="Upload">
                     </div>
                 </div>
                 <div class="col-md-12">

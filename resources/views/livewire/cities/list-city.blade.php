@@ -1,4 +1,4 @@
-@section('title', 'قائمة الفئات')
+@section('title', 'قائمة المدن')
 <div>
     <div class="row">
         <div class="col-md-12">
@@ -20,10 +20,9 @@
                     {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCenter">
                         اضافة مستخدم
                     </button> --}}
-                    <a href="{{ route('category.create') }}" type="button" class="btn btn-primary">
-                        اضافة قسم
+                    <a href="{{ route('cities.create') }}" type="button" class="btn btn-primary">
+                        {{ __('translate.add city') }}
                     </a>
-
                 </div>
             </div>
         </div>
@@ -32,40 +31,37 @@
                 <table class="table table-striped table-hover text-right">
                     <thead>
                         <tr>
-                            <th>{{ __('translate.category image') }}</th>
-                            <th>{{ __('translate.category name') }}</th>
-                            <th>{{ __('translate.category description') }}</th>
-                            <th>{{ __('translate.category status') }}</th>
-                            <th>{{ __('translate.operation') }}</th>
+                            <th>{{ __('translate.city name') }}</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                            @foreach ($this->getCategory as $category)
+                        @if ($cities->count() > 0)
+                            @foreach ($cities as $city)
                                 <tr>
-                                    <td class="justify-items-center">
-                                        {{-- {{ $category->getImage() }} --}}
-                                        <img style="width: 40px" src="{{ $category->getImage('category_image') }}" alt="">
-                                    </td>
-                                    <td>{{ $category->getTranslation('name', app()->getLocale()) }}</td>
-                                    <td>{{ $category->getTranslation('description', app()->getLocale()) }}</td>
-                                    <td>{!! $category->getBadge() !!}</td>
+                                    <td>{{ $city->getTranslation('name', app()->getLocale()) }}</td>
                                     <td>
                                         <div class="d-flex align-items-center justify-content-center">
                                             <a href="#"
                                                 class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill delete-record"><i
                                                     class="ti ti-trash text-danger ti-md"></i>
                                             </a>
-                                            <a href="{{ route('category.edit', $category->id) }}"
+                                            <a href="{{ route('cities.edit', $city->id) }}"
                                                 class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-edit"><i
                                                     class="ti ti-edit ti-md"></i></a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
+                        @else
+                            <tr>
+                                <td colspan="2">{{ __('translate.No Data') }}</td>
+                            </tr>
+                        @endif
                     </tbody>
                 </table>
                 <div class="container p-3">
-                    {{ $this->getCategory->links() }}
+                    {{-- {{ $this->getCategory->links() }} --}}
                 </div>
             </div>
         </div>

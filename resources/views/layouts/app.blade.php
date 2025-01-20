@@ -29,6 +29,19 @@
 
             <!-- Page Content -->
             <main>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                @if (session()->has('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{ $slot }}
             </main>
         </div>

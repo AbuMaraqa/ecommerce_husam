@@ -4,12 +4,22 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Livewire\Categories\CreateCategory;
 use App\Livewire\Categories\EditCategory;
 use App\Livewire\Categories\ListCategory;
+use App\Livewire\Cities\CityCreate;
+use App\Livewire\Cities\EditCity;
+use App\Livewire\Cities\ListCity;
 use App\Livewire\Home\Index;
+use App\Livewire\Labels\CreateLabel;
+use App\Livewire\Labels\EditLabel;
+use App\Livewire\Labels\ListLabel;
 use App\Livewire\Roles\RoleCreate;
 use App\Livewire\Roles\RoleList;
+use App\Livewire\Tags\CreateTag;
+use App\Livewire\Tags\EditTag;
+use App\Livewire\Tags\ListTag;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\EditUser;
 use App\Livewire\Users\ListUsers;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +42,6 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 
-require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return redirect()->route('home');
@@ -55,6 +64,21 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/create', CreateCategory::class)->name('category.create');
         Route::get('/edit/{id}', EditCategory::class)->name('category.edit');
     });
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+    Route::group(['prefix'=>'cities'],function (){
+        Route::get('/', ListCity::class)->name('cities.index');
+        Route::get('/create', CityCreate::class)->name('cities.create');
+        Route::get('/edit/{id}', EditCity::class)->name('cities.edit');
+    });
+    Route::group(['prefix'=>'labels'],function (){
+        Route::get('/', ListLabel::class)->name('labels.index');
+        Route::get('/create', CreateLabel::class)->name('labels.create');
+        Route::get('/edit/{id}', EditLabel::class)->name('labels.edit');
+    });
+    Route::group(['prefix'=>'tags'],function (){
+        Route::get('/', ListTag::class)->name('tags.index');
+        Route::get('/create', CreateTag::class)->name('tags.create');
+        Route::get('/edit/{id}', EditTag::class)->name('tags.edit');
+    });
 });
 
+require __DIR__.'/auth.php';

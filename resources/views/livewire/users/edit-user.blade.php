@@ -3,7 +3,7 @@
     <x-validation-message />
     <div class="card">
         <div class="card-body">
-            <form class="row" wire:submit.prevent="updateCategory">
+            <form class="row" wire:submit.prevent="update">
                 <div class="col-md-12 p-3">
                     <div class="form-group">
                         <label for="name">اسم المستخدم</label>

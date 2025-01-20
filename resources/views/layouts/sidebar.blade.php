@@ -54,7 +54,7 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-user"></i>
+                <i class="menu-icon tf-icons ti ti-lock"></i>
                 <div data-i18n="Products">صلاحيات المستخدمين</div>
             </a>
             <ul class="menu-sub">
@@ -72,7 +72,7 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-user"></i>
+                <i class="menu-icon tf-icons ti ti-category"></i>
                 <div data-i18n="Category">الفئات</div>
             </a>
             <ul class="menu-sub">
@@ -84,6 +84,60 @@
                 <li class="menu-item">
                     <a href="{{ route('category.create') }}" class="menu-link">
                         <div data-i18n="Add Product">اضافة فئة</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">المدن</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('cities.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة المدن</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('category.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة مدينة</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">الملصقات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('labels.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة الملصقات</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('labels.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة ملصق جديد</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">العلامات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('tags.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة العلامات</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('tags.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة علامة جديد</div>
                     </a>
                 </li>
             </ul>

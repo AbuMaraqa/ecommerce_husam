@@ -10,6 +10,7 @@ use Livewire\WithFileUploads;
 class EditCategory extends Component
 {
     use WithFileUploads;
+    public $category;
     public $category_id;
     public $name;
     public $description;
@@ -21,6 +22,7 @@ class EditCategory extends Component
     public function mount($id)
     {
         $data = Category::find($id);
+        $this->category = $data;
         $this->category_id = $data['id'];
         $this->name = $data['name'];
         $this->description = $data['description'];
@@ -33,6 +35,10 @@ class EditCategory extends Component
     #[Computed]
     public function getCategory(){
         return Category::get();
+    }
+
+    public function getCategoryImage($collection){
+        return $this->category->getImage($collection);
     }
 
     public function updateCategory()
@@ -79,7 +85,8 @@ class EditCategory extends Component
     public function render()
     {
         return view('livewire.categories.edit-category',[
-            'categories' => $this->getCategory()
+            'categories' => $this->getCategory(),
+            'category' => $this->category,
         ]);
     }
 }

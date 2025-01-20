@@ -21,6 +21,7 @@ use App\Livewire\Users\EditUser;
 use App\Livewire\Users\ListUsers;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,23 +35,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
+// Route::view('profile', 'profile')
+//     ->middleware(['auth'])
+//     ->name('profile');
 
-
+Auth::routes();
 
 Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/home', Index::class)->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', Index::class)->name('home');
+
     Route::group(['prefix'=>'users'],function (){
         Route::get('/', ListUsers::class)->name('users.index');
         Route::get('/create', CreateUser::class)->name('users.create');
@@ -88,4 +90,4 @@ Route::get('/migrate', function(){
 });
 
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

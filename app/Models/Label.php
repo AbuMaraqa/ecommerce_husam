@@ -8,7 +8,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Label extends Model
 {
-    use HasFactory , HasTranslations;
+    use HasFactory, HasTranslations;
 
     public $translatable = ['text'];
 
@@ -18,5 +18,10 @@ class Label extends Model
         'text_color',
     ];
 
-    protected $table='labels';
+    protected $table = 'labels';
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_labels', 'label_id', 'product_id');
+    }
 }

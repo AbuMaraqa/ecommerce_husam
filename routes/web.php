@@ -7,10 +7,16 @@ use App\Livewire\Categories\ListCategory;
 use App\Livewire\Cities\CityCreate;
 use App\Livewire\Cities\EditCity;
 use App\Livewire\Cities\ListCity;
+use App\Livewire\DeliveryAreas\CreateDeliveryArea;
+use App\Livewire\DeliveryAreas\EditDeliveryArea;
+use App\Livewire\DeliveryAreas\ListDeliveryArea;
 use App\Livewire\Home\Index;
 use App\Livewire\Labels\CreateLabel;
 use App\Livewire\Labels\EditLabel;
 use App\Livewire\Labels\ListLabel;
+use App\Livewire\Products\CreateProduct;
+use App\Livewire\Products\EditProduct;
+use App\Livewire\Products\ListProduct;
 use App\Livewire\Roles\RoleCreate;
 use App\Livewire\Roles\RoleList;
 use App\Livewire\Tags\CreateTag;
@@ -19,6 +25,15 @@ use App\Livewire\Tags\ListTag;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\EditUser;
 use App\Livewire\Users\ListUsers;
+use App\Livewire\VariationAttributes\CreateVariationAttributes;
+use App\Livewire\VariationAttributes\EditVariationAttributes;
+use App\Livewire\VariationAttributes\ListVariationAttributes;
+use App\Livewire\VariationAttributesValue\CreateVariationAttributesValue;
+use App\Livewire\VariationAttributesValue\EditVariationAttributesValue;
+use App\Livewire\VariationAttributesValue\ListVariationAttributesValue;
+use App\Livewire\Variations\CreateVariation;
+use App\Livewire\Variations\EditVariation;
+use App\Livewire\Variations\ListVariations;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -81,6 +96,31 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', ListTag::class)->name('tags.index');
         Route::get('/create', CreateTag::class)->name('tags.create');
         Route::get('/edit/{id}', EditTag::class)->name('tags.edit');
+    });
+    Route::group(['prefix'=>'delivery_areas'],function (){
+        Route::get('/', ListDeliveryArea::class)->name('delivery_areas.index');
+        Route::get('/create', CreateDeliveryArea::class)->name('delivery_areas.create');
+        Route::get('/edit/{id}', EditDeliveryArea::class)->name('delivery_areas.edit');
+    });
+    Route::group(['prefix'=>'products'],function (){
+        Route::get('/', ListProduct::class)->name('products.index');
+        Route::get('/create', CreateProduct::class)->name('products.create');
+        Route::get('/edit/{id}', EditProduct::class)->name('products.edit');
+    });
+    Route::group(['prefix'=>'variations'],function (){
+        Route::get('/', ListVariations::class)->name('variations.index');
+        Route::get('/create', CreateVariation::class)->name('variations.create');
+        Route::get('/edit/{id}', EditVariation::class)->name('variations.edit');
+    });
+    Route::group(['prefix'=>'variations_attributes'],function (){
+        Route::get('/', ListVariationAttributes::class)->name('variations_attributes.index');
+        Route::get('/create', CreateVariationAttributes::class)->name('variations_attributes.create');
+        Route::get('/edit/{id}', EditVariationAttributes::class)->name('variations_attributes.edit');
+    });
+    Route::group(['prefix'=>'variations_attributes_values'],function (){
+        Route::get('/', ListVariationAttributesValue::class)->name('variations_attributes_values.index');
+        Route::get('/create', CreateVariationAttributesValue::class)->name('variations_attributes_values.create');
+        Route::get('/edit/{id}', EditVariationAttributesValue::class)->name('variations_attributes_values.edit');
     });
 });
 

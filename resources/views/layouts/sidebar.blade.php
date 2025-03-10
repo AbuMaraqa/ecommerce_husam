@@ -142,5 +142,69 @@
                 </li>
             </ul>
         </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">مناطق التوصيل</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('delivery_areas.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة المناطق</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('delivery_areas.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة منطقة</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">الاصناف</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('products.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة الاصناف</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('products.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة صنف</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">الاضافات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('variations.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة الاضافات</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('products.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة اضافة</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('variations_attributes.index') }}" class="menu-link">
+                        <div data-i18n="Add Product">الصفات</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('variations_attributes_values.index') }}" class="menu-link">
+                        <div data-i18n="Add Product">قيم للصفات</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </aside>

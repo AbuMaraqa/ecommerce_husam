@@ -1,4 +1,4 @@
-@section('title', 'قائمة المستخدمين')
+@section('title', __('translate.users list'))
 <div>
     <div class="row">
         <div class="col-md-12">
@@ -16,7 +16,7 @@
     <div class="card">
         <div class="card-header flex-column flex-md-row">
             <div class="mb-4">
-                <input type="text" wire:model.live="search" placeholder="البحث" class="form-control">
+                <input type="text" wire:model.live="search" placeholder="{{ __('translate.search') }}" class="form-control">
             </div>
             <div class="dt-action-buttons text-end pt-6 pt-md-0">
                 <div class="dt-buttons btn-group flex-wrap">
@@ -27,7 +27,7 @@
                                     class="d-none d-sm-inline-block">Export</span></span></button></div> <a href="{{ route('users.create') }}"
                         class="btn btn-secondary create-new btn-primary waves-effect waves-light" tabindex="0"
                         aria-controls="DataTables_Table_0" type="button"><span><i class="ti ti-plus me-sm-1"></i> <span
-                                class="d-none d-sm-inline-block">اضافة مستخدم</span></span></a>
+                                class="d-none d-sm-inline-block">{{ __('translate.add user') }}</span></span></a>
                 </div>
             </div>
         </div>
@@ -36,11 +36,11 @@
                 <table class="table table-striped text-center">
                     <thead>
                         <tr>
-                            <th>الاسم</th>
-                            <th>البريد الالكتروني</th>
-                            <th>الصلاحيات</th>
-                            <th>الحالة</th>
-                            <th>الاجراءات</th>
+                            <th>{{ __('translate.name') }}</th>
+                            <th>{{ __('translate.email') }}</th>
+                            <th>{{ __('translate.role') }}</th>
+                            <th>{{ __('translate.status') }}</th>
+                            <th>{{ __('translate.operation') }}</th>
                         </tr>
                     </thead>
                     <tbody>

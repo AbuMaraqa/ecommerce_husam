@@ -206,5 +206,41 @@
                 </li>
             </ul>
         </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">الطلبيات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('orders.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة الطلبيات</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('orders.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة طلبية</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-building"></i>
+                <div data-i18n="Category">الكوبونات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('coupons.index') }}" class="menu-link">
+                        <div data-i18n="Category List">قائمة الكوبونات</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('coupons.create') }}" class="menu-link">
+                        <div data-i18n="Add Product">اضافة كوبون</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </aside>

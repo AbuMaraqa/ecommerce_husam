@@ -7,6 +7,9 @@ use App\Livewire\Categories\ListCategory;
 use App\Livewire\Cities\CityCreate;
 use App\Livewire\Cities\EditCity;
 use App\Livewire\Cities\ListCity;
+use App\Livewire\Coupons\CreateCoupons;
+use App\Livewire\Coupons\EditCoupons;
+use App\Livewire\Coupons\ListCoupons;
 use App\Livewire\DeliveryAreas\CreateDeliveryArea;
 use App\Livewire\DeliveryAreas\EditDeliveryArea;
 use App\Livewire\DeliveryAreas\ListDeliveryArea;
@@ -14,6 +17,10 @@ use App\Livewire\Home\Index;
 use App\Livewire\Labels\CreateLabel;
 use App\Livewire\Labels\EditLabel;
 use App\Livewire\Labels\ListLabel;
+use App\Livewire\Orders\CreateOrders;
+use App\Livewire\Orders\DetailsOrders;
+use App\Livewire\Orders\EditOrders;
+use App\Livewire\Orders\ListOrders;
 use App\Livewire\Products\CreateProduct;
 use App\Livewire\Products\EditProduct;
 use App\Livewire\Products\ListProduct;
@@ -121,6 +128,17 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', ListVariationAttributesValue::class)->name('variations_attributes_values.index');
         Route::get('/create', CreateVariationAttributesValue::class)->name('variations_attributes_values.create');
         Route::get('/edit/{id}', EditVariationAttributesValue::class)->name('variations_attributes_values.edit');
+    });
+    Route::group(['prefix'=>'orders'],function (){
+        Route::get('/', ListOrders::class)->name('orders.index');
+        Route::get('/create', CreateOrders::class)->name('orders.create');
+        Route::get('/edit/{id}', EditOrders::class)->name('orders.edit');
+        Route::get('/details/{order}', DetailsOrders::class)->name('orders.details');
+    });
+    Route::group(['prefix'=>'coupons'],function (){
+        Route::get('/', ListCoupons::class)->name('coupons.index');
+        Route::get('/create', CreateCoupons::class)->name('coupons.create');
+        Route::get('/edit/{id}', EditCoupons::class)->name('coupons.edit');
     });
 });
 

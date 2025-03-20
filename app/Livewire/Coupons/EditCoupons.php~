@@ -18,7 +18,7 @@ class EditCoupons extends Component
     public function generateCoupon()
     {
 
-        $coupon = Coupon::find($this->data['id'])->update($this->data);
+        $coupon = Coupon::update($this->data);
     }
 
     #[Computed()]

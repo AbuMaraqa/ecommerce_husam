@@ -13,18 +13,18 @@ class CreateCoupons extends Component
 {
     public ?array $data;
     public function generateCoupon()
-{
-    do{
-        $code = strtoupper(Str::random(8)); // توليد كود عشوائي
-    } while (Coupon::where('code', $code)->exists()); // التحقق من عدم التكرار
+    {
+        do{
+            $code = strtoupper(Str::random(8)); // توليد كود عشوائي
+        } while (Coupon::where('code', $code)->exists()); // التحقق من عدم التكرار
 
-    $this->data['code'] = $code;
+        $this->data['code'] = $code;
 
-    $coupon = Coupon::create($this->data);
+        $coupon = Coupon::create($this->data);
 
-    // إرسال إشعار إلى الواجهة
-    session()->flash('message', "تم إنشاء الكوبون: {$code}");
-}
+        // إرسال إشعار إلى الواجهة
+        session()->flash('message', "تم إنشاء الكوبون: {$code}");
+    }
 
     #[Computed()]
     public function getCouponStatus(){
